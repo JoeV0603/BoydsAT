@@ -8,7 +8,7 @@ import io.cucumber.junit.Cucumber;
 @CucumberOptions(features = "C:\\Users\\joevi\\eclipse-workspace\\BoydsCoffee\\src\\test\\resources\\Feature\\UserReg.feature", 
                  glue = { "org.stepdefinition" }, 
                  monochrome = true, 
-                 plugin = { "pretty", "html:C:\\Users\\joevi\\eclipse-workspace\\BoydsCoffee\\target//API_TestReport" })
+                 plugin = { "pretty", "html:C:\\Users\\joevi\\eclipse-workspace\\BoydsCoffee\\target//UserRegReport" })
 
 public class RunnerClass {
 
