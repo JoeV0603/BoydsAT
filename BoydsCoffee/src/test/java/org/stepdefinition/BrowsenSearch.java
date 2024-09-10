@@ -67,16 +67,16 @@ public class BrowsenSearch {
        
     	Thread.sleep(1000);
     	
-    	driver.findElement(By.xpath("(//a[@href='https://boyds.wp.shottqsr.com/product/coffee-shop-ground-coffee-6-lb/'])")).click();
+    	driver.findElement(By.xpath("(//a[@href='https://boyds.wp.shottqsr.com/product/boyds-breaktime-12-oz-ground-coffee/'])")).click();
         
         Thread.sleep(1000);
 
-        WebElement productDetails = driver.findElement(By.xpath("(//div[@id='product-89'])"));
+        WebElement productDetails = driver.findElement(By.xpath("(//div[@id='product-2755'])"));
 
         String actualText = productDetails.getText();
         System.out.println("Actual Product Details: " + actualText);
 
-        String expectedText = "COFFEE SHOP GROUND COFFEE: 6 LB";
+        String expectedText = "Breaktime- 12oz. Ground Coffee";
         assertTrue("Product details do not contain the expected text", 
             actualText.contains(expectedText));
         
