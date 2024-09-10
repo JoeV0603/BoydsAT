@@ -25,12 +25,14 @@ public class ProductListing {
 	    public void iNavigateToTheProductListingPage() throws InterruptedException {
 	        
 		    driver.get("https://boyds.wp.shottqsr.com/");
+		    
+		    Thread.sleep(1000);
 			
 			driver.manage().window().maximize();
 
 			Thread.sleep(1000);
 			
-			driver.findElement(By.xpath("(//a[@href='https://boyds.wp.shottqsr.com/shop/']) [1]")).click();
+			driver.findElement(By.xpath("(//a[@href='https://boyds.wp.shottqsr.com/shop/'])")).click();
 			
 			Thread.sleep(1000);
 	        
@@ -114,7 +116,7 @@ public class ProductListing {
 	        String actualText = productDetails.getText();
 	        System.out.println("Actual Product Details: " + actualText);
 
-	        String expectedText = "Breaktime: 12-Oz. Ground Coffee";
+	        String expectedText = "Breaktime- 12oz. Ground Coffee";
 	        assertTrue("Product details do not contain the expected text", 
 	            actualText.contains(expectedText));
 	        
@@ -122,7 +124,7 @@ public class ProductListing {
 	        
 	    	try {
 
-	            WebElement productImage = driver.findElement(By.xpath("//img[@src='https://farmerbrother-wp-bucket.s3.amazonaws.com/wp-content/uploads/sites/2/2024/07/17131829/BoydsCoffee_Breaktime-front-1024x1024.jpg']"));
+	            WebElement productImage = driver.findElement(By.xpath("//img[@src='https://farmerbrother-wp-bucket.s3.amazonaws.com/wp-content/uploads/sites/2/2024/07/17131829/BoydsCoffee_Breaktime-front-scaled.jpg']"));
 	            assert (productImage.isDisplayed()) : "Product image is not displayed";
 	        } catch (NoSuchElementException e) {
 	            System.out.println("Element not found: " + e.getMessage());
