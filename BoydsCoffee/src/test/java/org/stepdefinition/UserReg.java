@@ -41,7 +41,7 @@ public class UserReg {
         
 		Thread.sleep(5000);
 		
-		driver.findElement(By.id("reg_email")).sendKeys("vishal+test7@hurekatek.com");
+		driver.findElement(By.id("reg_email")).sendKeys("vishal+test735@hurekatek.com");
 		
 		driver.findElement(By.id("reg_password")).sendKeys("Joevishal@0603");
 		
@@ -58,7 +58,7 @@ public class UserReg {
         
     	assertTrue(successMessage.isDisplayed());
         
-    	assertEquals("MY ACCOUNT", successMessage.getText());
+    	assertEquals("My Account", successMessage.getText());
 
     	Thread.sleep(2000);
     	
@@ -168,8 +168,13 @@ public class UserReg {
           ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", passField);
           passField.sendKeys("Joevishal@0603");
     	  
-    	  driver.findElement(By.xpath("(//button[@class='woocommerce-Button woocommerce-button button woocommerce-form-register__submit'])")).click();
-    	  
+          Thread.sleep(2000);
+          
+          WebElement registerButton = driver.findElement(By.xpath("//button[@class='woocommerce-Button woocommerce-button button woocommerce-form-register__submit']"));
+          JavascriptExecutor js = (JavascriptExecutor) driver;
+          js.executeScript("arguments[0].click();", registerButton);
+
+        	  
       }
 
       @Then("User should see an email already registered error")
