@@ -69,7 +69,7 @@ public class UserLogin {
         
         Thread.sleep(1000);
 		
-		driver.findElement(By.name("username")).sendKeys("vishal+one@hurekatek.com");
+		driver.findElement(By.name("username")).sendKeys("vishal+onee@hurekatek.com");
 		
 		driver.findElement(By.name("password")).sendKeys("Joevishal@6394");
 		
