@@ -34,7 +34,7 @@ public class ProductDetails {
 		
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='https://boyds.wp.shottqsr.com/product/french-no-6-12-oz-ground-coffee/']")));
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='https://boyds.wp.shottqsr.com/product/boyds-breaktime-12-oz-ground-coffee/']")));
 		element.click();
 
 		Thread.sleep(2000);
@@ -47,12 +47,12 @@ public class ProductDetails {
 
     	Thread.sleep(1000);
 
-        WebElement prodDescription = driver.findElement(By.xpath("//div[@class='woocommerce-product-details__short-description']"));
+        WebElement prodDescription = driver.findElement(By.xpath("//div[@class='woocommerce-product-details__full-description']"));
 
         String actualText = prodDescription.getText();
         System.out.println("Actual Product Description: " + actualText);
 
-        String expectedText = "Made with 100% Arabica coffee beans, this dark roast is seductive and sweet";
+        String expectedText = "Boyd's Breaktime Coffee - Strong and Full-Bodied";
         assertTrue("Product description do not contain the expected text", 
             actualText.contains(expectedText));
         
@@ -67,11 +67,11 @@ public class ProductDetails {
         
         Thread.sleep(1000);
     	
-        WebElement availStatus = driver.findElement(By.xpath("//p[@class='stock out-of-stock']"));
+        WebElement availStatus = driver.findElement(By.xpath("//button[@class='single_add_to_cart_button button alt']"));
         
     	assertTrue(availStatus.isDisplayed());
         
-    	assertEquals("Desired qty not available", availStatus.getText());
+    	assertEquals("Add To Cart", availStatus.getText());
 
     	Thread.sleep(1000);
     	
@@ -123,7 +123,7 @@ public class ProductDetails {
         String actualText = price.getText();
         System.out.println("Actual Price: " + actualText);
 
-        String expectedText = "$ 10.99";
+        String expectedText = "$10.99";
         assertTrue("Product does not contain the expected price", 
             actualText.contains(expectedText));
         
