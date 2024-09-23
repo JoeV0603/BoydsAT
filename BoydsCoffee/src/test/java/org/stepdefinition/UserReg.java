@@ -41,7 +41,9 @@ public class UserReg {
         
 		Thread.sleep(5000);
 		
-		driver.findElement(By.id("reg_email")).sendKeys("vishal+test735@hurekatek.com");
+		driver.findElement(By.id("reg_username")).sendKeys("Jotestv");
+		
+		driver.findElement(By.id("reg_email")).sendKeys("vishal+test73511@hurekatek.com");
 		
 		driver.findElement(By.id("reg_password")).sendKeys("Joevishal@0603");
 		
@@ -70,6 +72,8 @@ public class UserReg {
     public void user_enters_invalid_email() throws InterruptedException {
 
     	Thread.sleep(5000);
+    	
+    	driver.findElement(By.id("reg_username")).sendKeys("Jotestvt");
     	
     	driver.findElement(By.id("reg_email")).sendKeys("vishal+joo.hurekatek.com");
 		
@@ -102,6 +106,8 @@ public class UserReg {
 
     	  Thread.sleep(5000);
     	  
+    	  driver.findElement(By.id("reg_username")).sendKeys("Jotestvt");
+    	  
     	  driver.findElement(By.id("reg_email")).sendKeys("vishal+joev.hurekatek.com");
     	  
     	  driver.findElement(By.id("reg_password")).sendKeys("Joe@0603");
@@ -130,6 +136,8 @@ public class UserReg {
     	  
           Thread.sleep(5000);
     	  
+          driver.findElement(By.id("reg_username")).sendKeys("Jotestvt");
+          
     	  driver.findElement(By.id("reg_email")).sendKeys("vishal+testing.hurekatek.com");
     	  
     	  driver.findElement(By.id("reg_password")).sendKeys("LCx47WGRQKhkGmr");
@@ -159,6 +167,10 @@ public class UserReg {
     	  Thread.sleep(5000);
     	  
     	  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	  
+    	  WebElement usernameField = wait.until(ExpectedConditions.elementToBeClickable(By.id("reg_username")));
+          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", usernameField);
+          usernameField.sendKeys("Joetestingv");
           
           WebElement emailField = wait.until(ExpectedConditions.elementToBeClickable(By.id("reg_email")));
           ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", emailField);
